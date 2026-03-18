@@ -37,7 +37,6 @@ header app-button {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: center;
   padding: 2rem;
 }
 
@@ -70,6 +69,11 @@ header app-button {
   padding: 1rem;
   border-radius: 1rem;
   background-color: var(--color-very-light-pink-2-t);
+
+  .color-picker{
+    border-radius: 0.5rem;
+    background-color: black;
+  }
 
   label {
     margin-right: 0.5rem;

@@ -11,23 +11,23 @@
   <div class="create-container">
     <div class="workspace-card">
       <div class="controls">
-        <div class="color-picker-wrapper">
           <input
-            type="color"
+            type="color" class="color-picker"
             [value]="selectedColor()"
             (input)="onColorChange($event)"
           />
-        </div>
-        <div class="used-colors">
-          @for (color of usedColors(); track color) {
-            <span
-              class="color-swatch"
-              [style.background]="color"
-              [class.active]="selectedColor() === color"
-              (click)="selectUsedColor(color)">
+        @if (usedColors().length > 0) {
+          <div class="used-colors">
+            @for (color of usedColors(); track color) {
+              <span
+                class="color-swatch"
+                [style.background]="color"
+                [class.active]="selectedColor() === color"
+                (click)="selectUsedColor(color)">
                         </span>
-          }
-        </div>
+            }
+          </div>
+        }
       </div>
       <div class="grid" (mouseup)="stopPainting()" (mouseleave)="stopPainting()">
         @for (row of grid(); track $index; let i = $index) {

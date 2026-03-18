@@ -108,5 +108,6 @@ export class NewPatternComponent {
     const whiteGrid = Array(16).fill('').map(() => Array(16).fill('#ffffff'));
     this.grid.set(whiteGrid);
     this.saveState();
+    this.selectedColor.set('#000000');
   }
 }
